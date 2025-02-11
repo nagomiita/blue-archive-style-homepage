@@ -41,6 +41,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 npx storybook@latest init
 ```
 
+- [Hot Reload](https://www.bing.com/search?qs=UT&pq=storybook+hot&sk=CSYN1&sc=16-13&pglt=393&q=storybook+hot+reload&cvid=20250903828d4e15a0b8d1d4aa4e60de&gs_lcrp=EgRlZGdlKgYIARAAGEAyBggAEEUYOTIGCAEQABhAMgYIAhAAGEAyBggDEAAYQDIGCAQQABhAMgYIBRAAGEAyBggGEAAYQDIGCAcQABhAMgYICBAAGEDSAQg5NDQzajBqMagCALACAA&FORM=ANNTA1&PC=NMTS)
+
 ## [Integrate Tailwind CSS with Storybook](https://storybook.js.org/recipes/tailwindcss#2-provide-tailwind-to-stories)
 
 [【Next.js14 AppRouter】storybook で tailwindCSS を使用する方法
