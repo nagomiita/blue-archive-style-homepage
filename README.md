@@ -34,3 +34,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Setup [Storybook](https://storybook.js.org/docs/get-started/install)
+
+```bash
+npx storybook@latest init
+```
+
+## [Integrate Tailwind CSS with Storybook](https://storybook.js.org/recipes/tailwindcss#2-provide-tailwind-to-stories)
+
+[【Next.js14 AppRouter】storybook で tailwindCSS を使用する方法
+](https://zenn.dev/sc30gsw/articles/0583409a2eb6ff)
+
+## Setup [Biome](https://biomejs.dev/ja/guides/getting-started/)
