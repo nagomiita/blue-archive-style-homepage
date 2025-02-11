@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 
-import { Header } from "./Header";
+import { TopBar } from "./Header";
 
-const meta = {
-	title: "Example/Header",
-	component: Header,
+const meta: Meta<typeof TopBar> = {
+	title: "Example/TopBar",
+	component: TopBar, // コンポーネントのアノテーションを追加
 	// This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
 	tags: ["autodocs"],
 	parameters: {
@@ -13,21 +13,20 @@ const meta = {
 		layout: "fullscreen",
 	},
 	args: {
-		onLogin: fn(),
-		onLogout: fn(),
-		onCreateAccount: fn(),
+		onBack: fn(),
+		onLobby: fn(),
 	},
-} satisfies Meta<typeof Header>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const LoggedIn: Story = {
+export const Default: Story = {
 	args: {
-		user: {
-			name: "Jane Doe",
-		},
+		title: "Title",
+		ap: 50,
+		maxAp: 100,
+		credit: 1000,
+		pyroxene: 500,
 	},
 };
-
-export const LoggedOut: Story = {};

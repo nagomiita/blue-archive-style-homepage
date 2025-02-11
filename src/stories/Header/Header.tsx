@@ -1,72 +1,77 @@
+import Image from "next/image";
 import React from "react";
 
-import { Button } from "../Button";
-import "./header.css";
-
-type User = {
-	name: string;
-};
-
-export interface HeaderProps {
-	user?: User;
-	onLogin?: () => void;
-	onLogout?: () => void;
-	onCreateAccount?: () => void;
+export interface TopBarProps {
+	title: string;
+	ap: number;
+	maxAp: number;
+	credit: number;
+	pyroxene: number;
+	onBack?: () => void;
+	onLobby?: () => void;
 }
 
-export const Header = ({
-	user,
-	onLogin,
-	onLogout,
-	onCreateAccount,
-}: HeaderProps) => (
-	<header>
-		<div className="storybook-header">
-			<div>
-				<svg
-					width="32"
-					height="32"
-					viewBox="0 0 32 32"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<title>Company Logo</title>
-					<g fill="none" fillRule="evenodd">
-						<path
-							d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-							fill="#FFF"
-						/>
-						<path
-							d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-							fill="#555AB9"
-						/>
-						<path
-							d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-							fill="#91BAF8"
-						/>
-					</g>
-				</svg>
-				<h1>Acme</h1>
+export const TopBar = ({
+	title,
+	ap,
+	maxAp,
+	credit,
+	pyroxene,
+	onBack,
+	onLobby,
+}: TopBarProps) => {
+	const commonItemClasses = "flex items-center space-x-2 text-lg";
+	const commonDividerClasses =
+		"h-8 w-[2px] bg-gray-400 transform rotate-[15deg]";
+
+	return (
+		<div className="z-50 h-12 mx-auto px-8 bg-white rounded-b-lg flex items-center">
+			<button
+				type="button"
+				className="p-0 m-0 border-none bg-transparent active:scale-90"
+				onClick={onBack}
+			>
+				<Image src="/img/back.png" alt="Back" width={40} height={40} />
+			</button>
+
+			<div className="px-5 border-b-4 border-yellow-300 text-2xl font-bold">
+				<p>{title}</p>
 			</div>
-			<div>
-				{user ? (
-					<>
-						<span className="welcome">
-							Welcome, <b>{user.name}</b>!
-						</span>
-						<Button size="small" onClick={onLogout} label="Log out" />
-					</>
-				) : (
-					<>
-						<Button size="small" onClick={onLogin} label="Log in" />
-						<Button
-							primary
-							size="small"
-							onClick={onCreateAccount}
-							label="Sign up"
-						/>
-					</>
-				)}
+
+			<div className="ml-auto flex items-center space-x-4">
+				<div className={commonItemClasses}>
+					<Image src="/img/ap.png" alt="AP" width={30} height={30} />
+					<p>
+						{ap} / {maxAp}
+					</p>
+					<div className={commonDividerClasses} />
+				</div>
+
+				<div className={commonItemClasses}>
+					<Image src="/img/gold.png" alt="Gold" width={30} height={30} />
+					<p>{credit.toLocaleString()}</p>
+					<div className={commonDividerClasses} />
+				</div>
+
+				<div className={commonItemClasses}>
+					<Image
+						src="/img/pyroxene.png"
+						alt="Pyroxene"
+						width={30}
+						height={30}
+					/>
+					<p>{pyroxene.toLocaleString()}</p>
+					<div className={commonDividerClasses} />
+				</div>
 			</div>
+
+			<button
+				type="button"
+				className="h-9 aspect-square ml-4 active:scale-90"
+				onClick={onLobby}
+			>
+				<Image src="/img/home.png" alt="Home" width={40} height={40} />
+			</button>
 		</div>
-	</header>
-);
+	);
+};

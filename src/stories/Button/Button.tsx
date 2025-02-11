@@ -1,7 +1,7 @@
 import React from "react";
 
 interface ButtonProps {
-	primary?: boolean;
+	color?: "primary" | "secondary";
 	backgroundColor?: string;
 	size?: "small" | "medium" | "large";
 	label: string;
@@ -19,22 +19,28 @@ const getSizeClasses = (size?: "small" | "medium" | "large") => {
 	}
 };
 
-const getModeClasses = (isPrimary: boolean) =>
-	isPrimary
-		? "text-white bg-pink-600 border-pink-600 dark:bg-pink-700 dark:border-pink-700"
-		: "text-slate-700 bg-transparent border-slate-700 dark:text-white dark:border-white";
+const getModeClasses = (color?: "primary" | "secondary") => {
+	switch (color) {
+		case "primary":
+			return "text-white bg-blue-archive border-blue-archive dark:bg-blue-archive dark:border-blue-archive";
+		case "secondary":
+			return "text-white bg-[#2b95f7] border-[#2b95f7] dark:bg-[#2b95f7] dark:border-[#2b95f7]";
+		default:
+			return "text-slate-700 bg-transparent border-slate-700 dark:text-white dark:border-white";
+	}
+};
 
 const BASE_BUTTON_CLASSES =
-	"cursor-pointer rounded-md border-2 font-bold leading-none inline-block transform skew-x-[-20deg]";
+	"cursor-pointer rounded-md border-2 font-bold leading-none inline-block transform skew-x-[-10deg]"; // 角度を浅くする
 
 export const Button = ({
-	primary = false,
+	color,
 	backgroundColor,
 	size = "medium",
 	label,
 	...props
 }: ButtonProps) => {
-	const modeClass = getModeClasses(primary);
+	const modeClass = getModeClasses(color);
 	const sizeClass = getSizeClasses(size);
 
 	return (
@@ -44,7 +50,8 @@ export const Button = ({
 			style={{ backgroundColor }}
 			{...props}
 		>
-			<span className="block transform skew-x-[20deg]">{label}</span>
+			<span className="block transform skew-x-[10deg]">{label}</span>{" "}
+			{/* テキストの角度も調整 */}
 		</button>
 	);
 };
