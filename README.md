@@ -47,3 +47,11 @@ npx storybook@latest init
 ](https://zenn.dev/sc30gsw/articles/0583409a2eb6ff)
 
 ## Setup [Biome](https://biomejs.dev/ja/guides/getting-started/)
+
+## Setup [i18n]
+
+[公式](https://next-intl.dev/docs/getting-started/app-router/with-i18n-routing)
+
+```bash
+npm install next-intl
+```
