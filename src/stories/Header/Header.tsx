@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-export interface TopBarProps {
+export interface HeaderProps {
 	title: string;
 	ap: number;
 	maxAp: number;
@@ -11,7 +11,7 @@ export interface TopBarProps {
 	onLobby?: () => void;
 }
 
-export const TopBar = ({
+export const Header = ({
 	title,
 	ap,
 	maxAp,
@@ -19,7 +19,7 @@ export const TopBar = ({
 	pyroxene,
 	onBack,
 	onLobby,
-}: TopBarProps) => {
+}: HeaderProps) => {
 	const commonItemClasses = "flex items-center space-x-2 text-lg";
 	const commonDividerClasses =
 		"h-8 w-[2px] bg-gray-400 transform rotate-[15deg]";

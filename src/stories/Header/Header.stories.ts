@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 
-import { TopBar } from "./Header";
+import { Header } from "./Header";
 
-const meta: Meta<typeof TopBar> = {
-	title: "Example/TopBar",
-	component: TopBar, // コンポーネントのアノテーションを追加
+const meta: Meta<typeof Header> = {
+	title: "Example/Header",
+	component: Header, // コンポーネントのアノテーションを追加
 	// This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
 	tags: ["autodocs"],
 	parameters: {
