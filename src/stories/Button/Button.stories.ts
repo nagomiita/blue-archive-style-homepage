@@ -5,18 +5,18 @@ import { Button } from "./Button";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "Example/Button",
-  component: Button,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: "centered",
-  },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ["autodocs"],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
+	title: "Example/Button",
+	component: Button,
+	parameters: {
+		// Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+		layout: "centered",
+	},
+	// This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+	tags: ["autodocs"],
+	// More on argTypes: https://storybook.js.org/docs/api/argtypes
 
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
+	// Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
+	args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -24,43 +24,50 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
-  args: {
-    color: "primary",
-    label: "MENU",
-  },
+	args: {
+		color: "primary",
+		label: "MENU",
+	},
 };
 
 export const Secondary: Story = {
-  args: {
-    color: "secondary",
-    label: "確認",
-  },
+	args: {
+		color: "secondary",
+		label: "確認",
+	},
 };
 export const Highlight: Story = {
-  args: {
-    color: "highlight",
-    label: "出撃",
-  },
+	args: {
+		color: "highlight",
+		label: "出撃",
+	},
 };
 export const Accent: Story = {
-  args: {
-    color: "accent",
-    label: "Button",
-  },
+	args: {
+		color: "accent",
+		label: "Button",
+	},
+};
+
+export const Info: Story = {
+	args: {
+		color: "info",
+		label: "キャンペーン通知",
+	},
 };
 
 export const Large: Story = {
-  args: {
-    color: "primary",
-    size: "large",
-    label: "Button",
-  },
+	args: {
+		color: "primary",
+		size: "large",
+		label: "Button",
+	},
 };
 
 export const Small: Story = {
-  args: {
-    color: "primary",
-    size: "small",
-    label: "Button",
-  },
+	args: {
+		color: "primary",
+		size: "small",
+		label: "Button",
+	},
 };
